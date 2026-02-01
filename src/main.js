@@ -65,7 +65,7 @@ async function handleImageSearch(event) {
 
     if (currentPage >= totalPages) {
       renderFunctions.hideLoadBtn && renderFunctions.hideLoadBtn();
-      iziToast.warning({ message: '', position: 'topRight' });
+      iziToast.warning({ message: "We're sorry, but you've reached the end of search results.", position: 'topRight' });
     } else {
       renderFunctions.showLoadBtn && renderFunctions.showLoadBtn();
       scrollByGalleryCardHeight();
@@ -87,6 +87,7 @@ async function handleImageSearch(event) {
 async function handleLoadMore() {
   if (!currentQuery) return;
   currentPage += 1;
+  renderFunctions.hideLoadBtn && renderFunctions.hideLoadBtn();
   renderFunctions.showLoader();
   try {
     const response = await getImagesByQuery(currentQuery, currentPage, perPage);

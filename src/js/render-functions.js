@@ -14,10 +14,10 @@ const createGallery = images => {
   const galleryMarkup = images
     .map(
       image => `<li class="gallery-item">
-            <a href=${image.largeImageURL} class="gallery-link">
+            <a href="${image.largeImageURL}" class="gallery-link">
               <img
                 class="gallery-img"
-                src=${image.webformatURL}
+                src="${image.webformatURL}"
                 alt="${image.tags}"
                 loading="lazy"
               />

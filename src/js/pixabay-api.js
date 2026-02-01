@@ -12,7 +12,7 @@ export default async function getImagesByQuery(query, page = 1, perPage = 15) {
             orientation: 'horizontal',
             safesearch: true,
             page,
-            per_page: perPage,
+            per_page: Math.max(perPage, 15),
         },
     });
     return response;
